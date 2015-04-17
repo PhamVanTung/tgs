@@ -10,22 +10,6 @@
                                        data: { confirm: "You sure?" } %>
     <% end %>
   </span>
-
-  <p>Comments</p>
-    <% entry.comments.each do |comment| %>
-      <p><%= link_to comment.user.name, comment.user %> : <%= comment.content %></p>
-      <span class="timestamp">
-      Posted <%= comment.created_at %>.
-      <% if current_user?(comment.user) %>
-        <%= link_to "Delete", comment, method: :delete,
-                                       data: {confirm: "You sure?"} %>
-      <% end %>
-      </span>
-    <% end %>
   <br>
-
-  <% if logged_in? %>
-  <%= render 'shared/comment_form', entry_id: entry.id %>
-  <% end %>
 </li>
 <br>

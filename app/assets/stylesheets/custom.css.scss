@@ -21,6 +21,8 @@ textarea {
 
 .center {
   text-align: center;
+  margin-left: 300px;
+  margin-right: 300px;
   h1 {
     margin-bottom: 10px;
   }
@@ -113,3 +115,86 @@ footer {
   @include box_sizing;
 }
 
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+/* entries */
+
+.entries {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .title {
+    display: block;
+    font-weight: bold;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .body {
+    display: block;
+    font-style: italic;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+
+.row{
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.field{
+  margin-left: 80px;
+}
+
+.all_feed{
+  margin-left: 600px;
+}

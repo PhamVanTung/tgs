@@ -1,4 +1,17 @@
-<h1>User info page</h1>
-<p><%= @users.name %></p>
-<p><%= @users.email %></p>
-<%= link_to "Back", users_path %>
+<% provide(:title, @users.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1><%= @users.name %></h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @users.feed.any? %>
+      <h3>Entries (<%= @users.feed.count %>)</h3>
+      <ol class="entries"
+        <%= render @users.feed %>
+      </ol>
+      <%= will_paginate @entries %>
+    <% end %>
+  </div>
+</div>

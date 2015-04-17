@@ -14,11 +14,13 @@ class	UsersController < ApplicationController
 
 	def show
 		@users = User.find(params[:id])
+		@entries = @users.feed.paginate(page: params[:page])
 	end
 
 	def create
 		@users = User.new user_params
 		if @users.save 
+			log_in @user
 			flash[:success] = "Insert user complete"
 	    redirect_to users_path
 		else
